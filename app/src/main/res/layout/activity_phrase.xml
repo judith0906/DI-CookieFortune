@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/txt_phras"
+        android:id="@+id/txt_phrase"
         android:text="Hola"
         android:textColor="#00BCD4"
         android:textSize="30sp"
