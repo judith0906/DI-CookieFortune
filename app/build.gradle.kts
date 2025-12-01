@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "com.novikon.di_cookiefortune"
-        minSdk = 22
+        minSdk = 23
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
@@ -45,8 +45,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation("com.google.android.material:material:<latest>")
-    implementation("com.google.firebase:firebase-analytics-ktx:<latest>")
-    implementation("com.google.firebase:firebase-auth-ktx:<latest>")
-    implementation("com.google.android.gms:play-services-ads:<latest>")
+    /*implementation("com.google.android.material:material:<latest>")
+    implementation("com.google.firebase:firebase-analytics-ktx:22.0.0")
+    implementation("com.google.firebase:firebase-auth-ktx:23.0.0")
+    implementation("com.google.android.gms:play-services-ads:23.0.0")*/
 }
