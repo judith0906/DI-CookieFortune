@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">DI-CookieFortune</string>
+
+    <!-- Array de frases de la fortuna -->
+    <string-array name="fortune_phrases">
+        <item>Hoy es un día perfecto para aprender algo nuevo</item>
+        <item>La paciencia es una virtud que trae grandes recompensas</item>
+        <item>Confía en ti mismo y alcanzarás tus metas</item>
+        <item>La suerte favorece a los valientes</item>
+        <item>Un pequeño paso hoy te llevará lejos mañana</item>
+        <item>La creatividad es la clave del éxito</item>
+        <item>Las oportunidades aparecen cuando menos las esperas</item>
+        <item>Tu actitud positiva atraerá cosas positivas</item>
+        <item>El conocimiento es el mejor tesoro</item>
+        <item>Grandes cosas vienen a quienes esperan</item>
+    </string-array>
 </resources>
