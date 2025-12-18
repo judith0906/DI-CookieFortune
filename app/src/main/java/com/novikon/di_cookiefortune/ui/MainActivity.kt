@@ -1,6 +1,7 @@
 package com.novikon.di_cookiefortune.ui
 
 import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
@@ -10,6 +11,9 @@ import androidx.core.view.WindowInsetsCompat
 import com.novikon.di_cookiefortune.R
 
 class MainActivity : AppCompatActivity() {
+
+    private var mp: MediaPlayer? = null  // Declarar como propiedad de la clase
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -25,12 +29,20 @@ class MainActivity : AppCompatActivity() {
         }
 
         imatgeCookie.setOnClickListener {
+
+            mp = MediaPlayer.create(this, R.raw.cookie)
+            mp?.start()
             val intent = Intent(this, PhraseActivity::class.java)
             startActivity(intent)
         }
+
+
     }
 
-
-
-
+    override fun onDestroy() {
+        super.onDestroy()
+        mp?.stop()
+        mp?.release()
+        mp = null
+    }
 }
