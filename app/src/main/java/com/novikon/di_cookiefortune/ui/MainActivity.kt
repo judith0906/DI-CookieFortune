@@ -1,8 +1,12 @@
 package com.novikon.di_cookiefortune.ui
 
+import android.content.Context
 import android.content.Intent
 import android.media.MediaPlayer
+import android.os.Build
 import android.os.Bundle
+import android.os.VibrationEffect
+import android.os.Vibrator
 import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -12,7 +16,7 @@ import com.novikon.di_cookiefortune.R
 
 class MainActivity : AppCompatActivity() {
 
-    private var mp: MediaPlayer? = null  // Declarar como propiedad de la clase
+    private var mp: MediaPlayer? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +36,27 @@ class MainActivity : AppCompatActivity() {
 
             mp = MediaPlayer.create(this, R.raw.cookie)
             mp?.start()
+
+            // Obtener el vibrator de forma compatible
+            val vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                getSystemService(Vibrator::class.java)
+            } else {
+                @Suppress("DEPRECATION")
+                getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+            }
+
+            // Vibrar si el vibrator está disponible
+            if (vibrator != null && vibrator.hasVibrator()) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    vibrator.vibrate(
+                        VibrationEffect.createOneShot(100, VibrationEffect.DEFAULT_AMPLITUDE)
+                    )
+                } else {
+                    @Suppress("DEPRECATION")
+                    vibrator.vibrate(100)
+                }
+            }
+
             val intent = Intent(this, PhraseActivity::class.java)
             startActivity(intent)
         }
