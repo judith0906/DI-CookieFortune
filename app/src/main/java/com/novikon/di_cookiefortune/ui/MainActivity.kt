@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
             mp?.start()
             val vibrator = getSystemService(Vibrator::class.java)
             vibrator?.vibrate(
-                VibrationEffect.createOneShot(100, VibrationEffect.DEFAULT_AMPLITUDE)
+                VibrationEffect.createOneShot(1000, VibrationEffect.DEFAULT_AMPLITUDE)
             )
             val intent = Intent(this, PhraseActivity::class.java)
             startActivity(intent)
