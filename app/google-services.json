@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "218137456625",
+    "project_id": "fortune-cookie-ed300",
+    "storage_bucket": "fortune-cookie-ed300.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:218137456625:android:cf0458f04419cded6c5e50",
+        "android_client_info": {
+          "package_name": "com.novikon.di_cookiefortune"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbCIfV8l3VyREtiSvcVqBZ4P8JhSFqSZI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
